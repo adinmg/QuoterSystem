@@ -1,0 +1,31 @@
+services:
+  quoter_api:
+    build:
+      context: ./quoter_api
+    env_file:
+      - ./env/.env
+    expose:
+      - 8000
+    # ports:
+    #   - "8000:8000"
+  
+  quoter_frontend:
+    build:
+      context: ./quoter_frontend
+    env_file:
+      - ./env/.env
+    depends_on:
+      - quoter_api
+    expose:
+      - 8501
+    # ports:
+    #   - "8501:8501"
+  
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - quoter_api
+      - quoter_frontend

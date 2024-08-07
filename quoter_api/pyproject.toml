@@ -1,0 +1,23 @@
+[project]
+name = "quoter_api"
+version = "0.1"
+dependencies = [
+    "langchain==0.1.17",
+    "langchain-community==0.0.36",
+    "langchain-core==0.1.50",
+    "langchain-experimental==0.0.57",
+    "langchain-openai==0.1.6",
+    "openai",
+    "asyncio==3.4.3",
+    "fastapi==0.109.0",
+    "pandas==2.2.2",
+    "faiss-cpu==1.8.0",
+    "fpdf",
+    "pydantic==2.5.1",
+    "uvicorn==0.25.0",
+    "python-dotenv",
+    "openpyxl",
+]
+
+[project.optional-dependencies]
+dev = ["black", "flake8"]
